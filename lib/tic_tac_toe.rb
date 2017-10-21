@@ -73,7 +73,7 @@ class TicTacToe
     WIN_COMBINATIONS.find do |win_combo|
       if (@board[win_combo[1]] == "X") && (@board[win_combo[1]] == "X") && @board[win_combo[3]] == "X") && position_taken?(win_combo[1])
         return "X"
-      else (@board[win_combo[0]] == @board[win_combo[1]] == "O") && (@board[win_combo[0]] == @board[win_combo[2]] == "O") && position_taken?(win_combo[1])
+      else (@board[win_combo[1]] == @board[win_combo[1]] == "O") && (@board[win_combo[0]] == @board[win_combo[2]] == "O") && position_taken?(win_combo[1])
         return "O"
       end
     end

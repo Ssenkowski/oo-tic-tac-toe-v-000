@@ -1,8 +1,8 @@
 
 class TicTacToe
   attr_accessor :board
-  
-  def initialize(board = ''" ", " ", " ", " ", " ", " ", " ", " ", " "'')
+
+  def initialize(board = '" ", " ", " ", " ", " ", " ", " ", " ", " "')
     self.board = board
   end
 

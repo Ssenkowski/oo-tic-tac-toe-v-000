@@ -75,7 +75,7 @@ class TicTacToe
     end
     if @board[win_combo] == "X"
       return "X"
-    else 
+    else
       @board[win_combo] == "O"
       return "O"
     end

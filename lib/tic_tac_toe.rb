@@ -88,7 +88,7 @@ class TicTacToe
     end
   end
 
-  def position_taken?(board, location)
+  def position_taken?(board, index)
     if board[location] == " "
       returns false
     else

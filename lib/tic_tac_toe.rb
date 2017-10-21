@@ -109,11 +109,8 @@ class TicTacToe
         counter += 1
       end
        if won?
-          if winner == "X" 
+         winner == "X" || winner == "O"
          puts "Congratulations #{winner(@board)}!"
-          else winner == "O"
-         puts "Congratulations #{winner(@board)}!"
-          end
        else draw?
          puts "Cat's Game!"
        end

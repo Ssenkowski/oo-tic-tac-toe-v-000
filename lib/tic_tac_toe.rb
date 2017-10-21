@@ -5,6 +5,17 @@ class TicTacToe
     @board = board
   end
 
+  def board=(board)
+    @board = board
+  end
+
+  def board
+    @board
+  end
+
+  def board
+    puts '" ", " ", " ", " ", " ", " ", " ", " ", " "'
+
   def display_board(board)
     puts " #{board[0]} | #{board[1]} | #{board[2]} "
     puts "-----------"

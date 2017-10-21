@@ -4,29 +4,23 @@ class TicTacToe
     @board = board || Array.new(9, " ")
   end
 
-  def board=(board)
-    @board = board
-  end
-
-  def board
-    @board
-  end
-
-
-  def display_board=(board)
-    @board = board
-  end
+  WIN_COMBINATIONS = [
+    [0,1,2],#Top_row_win
+    [3,4,5],#Middle_row_win
+    [6,7,8],#Bottom_row_win
+    [0,3,6],#Left_column_win
+    [1,4,7],#Middle_column_win
+    [2,5,8],#Right_column_win
+    [0,4,8],#Top_left_to_bottom_right_win
+    [2,4,6],#Top_right_to_bottom_left_win
+  ]
 
   def display_board
-    @board
-  end
-
-  def display_board
-    puts " #{board[0]} | #{board[1]} | #{board[2]} "
+    puts " #{@board[0]} | #{@board[1]} | #{@board[2]} "
     puts "-----------"
-    puts " #{board[3]} | #{board[4]} | #{board[5]} "
+    puts " #{@board[3]} | #{@board[4]} | #{@board[5]} "
     puts "-----------"
-    puts " #{board[6]} | #{board[7]} | #{board[8]} "
+    puts " #{@board[6]} | #{@board[7]} | #{@board[8]} "
   end
 
   def input_to_index(user_input)
@@ -91,17 +85,7 @@ class TicTacToe
   end
 
   # Define your WIN_COMBINATIONS constant
-  WIN_COMBINATIONS = [
-    [0,1,2],#Top_row_win
-    [3,4,5],#Middle_row_win
-    [6,7,8],#Bottom_row_win
-    [0,3,6],#Left_column_win
-    [1,4,7],#Middle_column_win
-    [2,5,8],#Right_column_win
-    [0,4,8],#Top_left_to_bottom_right_win
-    [2,4,6],#Top_right_to_bottom_left_win
-  ]
-
+  
   def won?(board)
     WIN_COMBINATIONS.find do |win_combo|
       board[win_combo[0]] == board[win_combo[1]] && board[win_combo[0]] == board[win_combo[2]] && position_taken?(board, win_combo[1])

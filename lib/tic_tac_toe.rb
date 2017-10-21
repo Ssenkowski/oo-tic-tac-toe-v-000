@@ -92,7 +92,6 @@ class TicTacToe
     if board[index] == " "
       returns false
     else
-      returns true
     end
   end
 

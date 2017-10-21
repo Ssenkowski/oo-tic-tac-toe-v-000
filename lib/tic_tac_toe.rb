@@ -47,7 +47,7 @@ class TicTacToe
     end
   end
 
-  def play(board)
+  def play
     counter = 0
     until over?(board)
       turn(board)

@@ -31,6 +31,10 @@ class TicTacToe
     @board[index] = current_player
   end
 
+  def position_taken?(index)
+     !(@board[index].nil? || @board[index] == " ")
+  end
+  
   def valid_move?(index)
     index.between?(0,8) && !position_taken?(index)
   end
@@ -65,27 +69,6 @@ class TicTacToe
     end
   end
 
-
-  def play
-    counter = 0
-    until over?
-      turn
-      counter += 1
-    end
-     if won?
-       winner == "X" || winner == "O"
-       puts "Congratulations #{winner(@board)}!"
-     else draw?
-       puts "Cat's Game!"
-     end
-  end
-
-  def position_taken?(index)
-     !(@board[index].nil? || @board[index] == " ")
-  end
-
-  # Define your WIN_COMBINATIONS constant
-
   def won?(board)
     WIN_COMBINATIONS.find do |win_combo|
       @board[win_combo[0]] == @board[win_combo[1]] && @board[win_combo[0]] == @board[win_combo[2]] && position_taken?(win_combo[1])
@@ -115,5 +98,20 @@ class TicTacToe
       return @board[won?[0]]
     end
   end
+  
+
+    def play
+      counter = 0
+      until over?
+        turn
+        counter += 1
+      end
+       if won?
+         winner == "X" || winner == "O"
+         puts "Congratulations #{winner(@board)}!"
+       else draw?
+         puts "Cat's Game!"
+       end
+    end
 
 end

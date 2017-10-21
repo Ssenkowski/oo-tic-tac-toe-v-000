@@ -96,6 +96,8 @@ class TicTacToe
   def winner
     if won?
       return @board[won?[0]]
+    else
+      nil
     end
   end
 
@@ -107,7 +109,7 @@ class TicTacToe
         counter += 1
       end
        if won?
-         if winner == "X" 
+         if winner == "X"
          puts "Congratulations #{winner(@board)}!"
          else winner == "O"
         puts "Congratulations #{winner(@board)}!"

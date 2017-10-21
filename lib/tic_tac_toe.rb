@@ -108,9 +108,10 @@ class TicTacToe
         turn
         counter += 1
       end
+      
        if won?
          winner == "X" || winner == "O"
-         puts "Congratulations #{winner(@board)}!"
+         puts "Congratulations #{winner}!"
        else draw?
          puts "Cat's Game!"
        end

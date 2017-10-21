@@ -91,8 +91,9 @@ class TicTacToe
   def position_taken?(board, location)
     if board[location] == " "
       returns false
-    else 
+    else
       returns true
+    end
   end
 
   # Define your WIN_COMBINATIONS constant

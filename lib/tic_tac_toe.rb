@@ -88,31 +88,31 @@ class TicTacToe
 
   def won?(board)
     WIN_COMBINATIONS.find do |win_combo|
-      board[win_combo[0]] == board[win_combo[1]] && board[win_combo[0]] == board[win_combo[2]] && position_taken?(board, win_combo[1])
+      @board[win_combo[0]] == @board[win_combo[1]] && @board[win_combo[0]] == @board[win_combo[2]] && position_taken?(win_combo[1])
     end
   end
 
-  def full?(board)
-   if board.include?(' ')
+  def full?
+   if @board.include?(' ')
      return false
    else
      return true
    end
   end
 
-   def draw?(board)
-     if !won?(board) && full?(board)
+   def draw?
+     if !won? && full?
        return true
      end
    end
 
-   def over?(board)
-     draw?(board) == true || won?(board) != nil
+   def over?
+     draw? == true || won? != nil
    end
 
-  def winner(board)
-    if won?(board)
-      return board[won?(board)[0]]
+  def winner
+    if won?
+      return @board[won?[0]]
     end
   end
 

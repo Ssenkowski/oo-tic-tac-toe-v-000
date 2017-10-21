@@ -49,20 +49,20 @@ class TicTacToe
 
   def play
     counter = 0
-    until over?(board)
-      turn(board)
+    until over?
+      turn
       counter += 1
     end
-     if won?(board)
-       winner(board) == "X" || winner(board) == "O"
-       puts "Congratulations #{winner(board)}!"
-     else draw?(board)
+     if won?
+       winner == "X" || winner == "O"
+       puts "Congratulations #{winner(@board)}!"
+     else draw?
        puts "Cat's Game!"
      end
   end
 
 
-  def turn_count(board)
+  def turn_count
     counter = 0
     board.each do |space|
       if space != " "
@@ -72,15 +72,15 @@ class TicTacToe
     counter
   end
 
-  def current_player(board)
-    if turn_count(board) % 2 == 0
+  def current_player
+    if turn_count % 2 == 0
       "X"
     else
       "O"
     end
   end
 
-  def position_taken?(board, index)
+  def position_taken?index)
      !(@board[index].nil? || @board[index] == " ")
   end
 

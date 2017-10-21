@@ -1,8 +1,9 @@
 
 class TicTacToe
-
-  def initialize(board)
-    @board = board
+  attr_accessor :board
+  
+  def initialize(board = ''" ", " ", " ", " ", " ", " ", " ", " ", " "'')
+    self.board = board
   end
 
   def board=(board)
@@ -13,9 +14,6 @@ class TicTacToe
     @board
   end
 
-  def board
-    puts '" ", " ", " ", " ", " ", " ", " ", " ", " "'
-  end
 
   def display_board(board)
     puts " #{board[0]} | #{board[1]} | #{board[2]} "

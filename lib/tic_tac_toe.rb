@@ -1,9 +1,10 @@
 
 class TicTacToe
-  attr_accessor :board
+  attr_accessor :board, :move
 
-  def initialize(board = [" ", " ", " ", " ", " ", " ", " ", " ", " "])
+  def initialize(board = [" ", " ", " ", " ", " ", " ", " ", " ", " "], move = "X")
     self.board = board
+    self.move = move
   end
 
   def board=(board)

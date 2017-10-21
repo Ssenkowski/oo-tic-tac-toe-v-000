@@ -89,11 +89,7 @@ class TicTacToe
   end
 
   def position_taken?(board, index)
-    if ! (board[index] == " " || board[index] == "" || board[index] == nil)
-      returns false
-    else
-      returns true
-    end
+     ! (@board[index].nil? || @board[index] == " ")
   end
 
   # Define your WIN_COMBINATIONS constant

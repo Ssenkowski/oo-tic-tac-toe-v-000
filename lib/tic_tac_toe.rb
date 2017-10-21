@@ -40,11 +40,21 @@ class TicTacToe
     input = gets.strip
     index = input_to_index(input)
     if valid_move?(index)
-      moveindex, current_player
+      move(index, current_player)
       display_board
     else
       turn
     end
+  end
+
+  def turn_count
+    counter = 0
+    board.each do |space|
+      if space != " "
+         counter += 1
+      end
+    end
+    counter
   end
 
   def play
@@ -59,17 +69,6 @@ class TicTacToe
      else draw?
        puts "Cat's Game!"
      end
-  end
-
-
-  def turn_count
-    counter = 0
-    board.each do |space|
-      if space != " "
-         counter += 1
-      end
-    end
-    counter
   end
 
   def current_player

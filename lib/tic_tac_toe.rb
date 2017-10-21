@@ -80,7 +80,7 @@ class TicTacToe
       position_taken?(tokens[0])
     end
   end
-  
+
    def draw?
      if !won? && full?
        return true

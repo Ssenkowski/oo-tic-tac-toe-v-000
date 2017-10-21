@@ -57,6 +57,15 @@ class TicTacToe
     counter
   end
 
+  def current_player
+    if turn_count % 2 == 0
+      "X"
+    else
+      "O"
+    end
+  end
+
+
   def play
     counter = 0
     until over?
@@ -69,14 +78,6 @@ class TicTacToe
      else draw?
        puts "Cat's Game!"
      end
-  end
-
-  def current_player
-    if turn_count % 2 == 0
-      "X"
-    else
-      "O"
-    end
   end
 
   def position_taken?(index)
